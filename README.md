@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🗂️ Taskboard
+# Taskboard
 
 **A production-style Developer Task Board REST API built in Go**
 *A hands-on Docker consolidation project covering every core Docker concept — from basic Dockerfiles to multi-stage builds, networking, Compose, secrets, and registry publishing.*
@@ -131,13 +131,14 @@ Full breakdown with commands → [`docs/project-phases.md`](docs/project-phases.
 ## Author
 
 **Prachi Satbhai**
-2nd Year Computer Engineering — KBTCOE, Nashik
-Core Team — MLSC KBTCOE | Full-Stack & DevOps Learner
-
 [![GitHub](https://img.shields.io/badge/GitHub-prachi--satbhai0741-181717?style=flat-square&logo=github)](https://github.com/prachi-satbhai0741)
 
 ---
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE)
+This project is licensed under the MIT License — see LICENSE for details.[`LICENSE`](LICENSE)
+
+---
+
+If this repo helped you, consider giving it a star — it helps others find it too!

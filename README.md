@@ -38,41 +38,41 @@ API available at `http://localhost:8080` — see [`docs/api-reference.md`](docs/
 
 ## Project Structure
 
-```
+```bash
 Taskboard/
-├── Dockerfile                   # Multi-stage production build
-├── docker-compose.yml           # Orchestrates API + Postgres + Redis
-├── docker-compose.override.yml  # Dev overrides
+├── Dockerfile
+├── docker-compose.yml
+├── docker-compose.override.yml
 ├── .dockerignore
-├── .env.example                 # Copy to .env and fill values
+├── .env.example
 ├── main.go
-├── go.mod / go.sum
-├── handlers/                    # HTTP route handlers
-├── models/                      # GORM models
-├── db/                          # DB connection + migration
-├── secrets/                     # Docker secrets (git-ignored)
+├── go.mod
+├── go.sum
+├── handlers/
+├── models/
+├── db/
+├── secrets/
 └── docs/
-    ├── architecture.md          # System design + diagrams
-    ├── docker-concepts.md       # All Docker concepts used + explanations
-    ├── setup-guide.md           # Full local + Docker setup instructions
-    ├── api-reference.md         # All endpoints with curl examples
-    └── project-phases.md        # Phase-by-phase breakdown with git log
+    ├── architecture.md
+    ├── setup-guide.md
+    └── api-reference.md
 ```
-
 ---
-
 ## Docker Concepts Covered
 
-| Concept | Phase |
-|---|---|
-| Dockerfile, `.dockerignore` | 2 |
-| Multi-stage build, layer caching | 3 |
-| Custom bridge networks | 4 |
-| Volumes, Docker Compose, health checks | 5 |
-| Env vars, secrets, resource limits | 6 |
-| Image tagging, DockerHub push | 7 |
-
-Full breakdown → [`docs/docker-concepts.md`](docs/docker-concepts.md)
+- Dockerfile
+- `.dockerignore`
+- Multi-stage builds
+- Layer caching
+- Custom bridge networks
+- Volumes
+- Docker Compose
+- Health checks
+- Environment variables
+- Docker secrets
+- Resource limits
+- Image tagging
+- DockerHub push
 
 ---
 
@@ -90,32 +90,13 @@ Full reference with examples → [`docs/api-reference.md`](docs/api-reference.md
 
 ---
 
-## Phases
-
-| Phase | Focus | Docker Concepts |
-|---|---|---|
-| **1** | Go REST API baseline — no Docker | None — app foundation |
-| **2** | Containerize the app | Dockerfile, `.dockerignore` |
-| **3** | Optimize the image | Multi-stage build, layer caching |
-| **4** | Connect services | Custom bridge networks |
-| **5** | Orchestrate everything | Docker Compose, volumes, health checks |
-| **6** | Harden config | Env vars, secrets, resource limits |
-| **7** | Ship it | Image tagging, DockerHub push |
-
-Full breakdown with commands → [`docs/project-phases.md`](docs/project-phases.md)
-
----
-
 ## Docs
 
 | File | Contents |
 |---|---|
 | [`architecture.md`](docs/architecture.md) | System design, container diagram, tech choices |
-| [`docker-concepts.md`](docs/docker-concepts.md) | Every Docker concept used with explanation |
 | [`setup-guide.md`](docs/setup-guide.md) | Local + Docker + Compose setup instructions |
 | [`api-reference.md`](docs/api-reference.md) | Endpoints, request/response, curl examples |
-| [`project-phases.md`](docs/project-phases.md) | Phase breakdown, commit messages, what was learned |
-
 ---
 
 ## Related Repos

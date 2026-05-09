@@ -1,80 +1,29 @@
-# Base image — official Go 1.22 on Alpine Linux
-FROM golang:1.25-alpine
+# ── Stage 1: Builder ──────────────────────────────────
+FROM golang:1.25-alpine AS builder
 
-# Set working directory inside the container
+# Install git (needed by some Go modules)
+RUN apk add --no-cache git
+
 WORKDIR /app
 
-# Copy dependency files FIRST (layer caching trick)
+# Copy dependency files first — layer caching
 COPY go.mod go.sum ./
-
-# Download dependencies
 RUN go mod download
 
 # Copy source code
 COPY . .
 
-# Build the binary
-RUN go build -o taskboard .
+# Build a fully static binary — no external dependencies
+RUN CGO_ENABLED=0 GOOS=linux go build -o taskboard .
 
-# Document the port
+# ── Stage 2: Final Image ───────────────────────────────
+FROM alpine:3.19
+
+WORKDIR /app
+
+# Copy ONLY the binary from the builder stage
+COPY --from=builder /app/taskboard .
+
 EXPOSE 8080
 
-# Run the binary when container starts
 CMD ["./taskboard"]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

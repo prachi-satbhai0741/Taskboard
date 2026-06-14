@@ -9,6 +9,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-7-DC382D?style=flat-square&logo=redis&logoColor=white)
+![DockerHub](https://img.shields.io/badge/DockerHub-prachisatbhai%2Ftaskboard-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 </div>
@@ -34,6 +35,10 @@ docker compose up --build
 
 API available at `http://localhost:8080` — see [`docs/api-reference.md`](docs/api-reference.md) for all endpoints.
 
+Or pull directly from DockerHub:
+\```bash
+docker pull prachisatbhai/taskboard:latest
+\```
 ---
 
 ## Project Structure

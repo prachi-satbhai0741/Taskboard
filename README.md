@@ -36,9 +36,10 @@ docker compose up --build
 API available at `http://localhost:8080` — see [`docs/api-reference.md`](docs/api-reference.md) for all endpoints.
 
 Or pull directly from DockerHub:
-\```bash
+
+```bash
 docker pull prachisatbhai/taskboard:latest
-\```
+```
 ---
 
 ## Project Structure

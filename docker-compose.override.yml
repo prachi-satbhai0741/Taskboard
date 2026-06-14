@@ -1,0 +1,7 @@
+services:
+  api:
+    environment:
+      - GIN_MODE=debug
+  postgres:
+    ports:
+      - "5432:5432"
